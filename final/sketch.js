@@ -11,7 +11,7 @@ let deg; //代表一個角度值，可能用於存儲或操作特定的角度
 
 function setup() {
     // put setup code here
-    createCanvas(400, 400);//背景畫布大小
+    createCanvas(600, 400);//背景畫布大小
     noLoop(); //一次性 draw(),而不是持續執行
     angleMode(DEGREES); //設定角度模式為度數模式
 }
@@ -25,29 +25,34 @@ function mouseClicked() {
 }
 
 function newTree() {
-    background(220); //清空畫布
-    
-    deg = random(80, 100); // 設定樹的初始角度
-    
-    baseLength = random(height / 9, height / 3); //設定樹的基本長度
-    minLength = random(1, 11); //設定樹的最小長度
-    lengthRatio = random(0.35, 0.85); //設定樹的長度比率
-    angleChange = random(6, 50); //設定樹的角度變化
-    thickness = random(10, 30); //設定樹的初始厚度
-    thicknessRatio = random(0.4, 0.7); //設定樹的厚度比率
-    
-    leafDensity = random(0, 20); //設定葉子的密度
-    leafColor = color(random(0, 255), random(0, 255), random(0, 255)); //設定葉子的顏色
+    background(220);
 
-    drawTree(
-        width / 2,
-        height,
-        deg,
-        baseLength,
-        thickness
+    deg = random(80, 100);
     
-    );
+    baseLength = random(height / 8, height / 4); // 設定樹的基本長度
+    minLength = random(1, 10); // 設定樹的最小長度
+    lengthRatio = random(0.25, 0.75); // 設定樹的長度比率
+    angleChange = random(6, 60); // 設定樹的角度變化
+    thickness = random(10, 20); // 設定樹的初始厚度
+    thicknessRatio = random(0.4, 0.7); // 設定樹的厚度比率
+
+    leafDensity = random(0, 10); // 設定葉子的密度
+    leafColor = color(random(0, 255), random(0, 255), random(0, 255))
+
+    // 新增條件來限制角度變化的最大值
+    if (angleChange > 90) {
+        angleChange = 90; // 這裡可以改成你希望的最大值
+    }
+
+    thickness = random(10, 20);
+    thicknessRatio = random(0.4, 0.7);
+
+    leafDensity = random(0, 10);
+    leafColor = color(random(0, 255), random(0, 255), random(0, 255));
+
+    drawTree(width / 2, height, deg, baseLength, thickness);
 }
+
 
 function drawTree(x, y, angle, length, thickness) {
     let v = [];
@@ -59,10 +64,10 @@ function drawTree(x, y, angle, length, thickness) {
     strokeWeight(thickness);
     line(x1, y1, x2, y2);
     
-    if (angle>=360) {
-        angle -= 360;
+    if (angle>=270) {
+        angle -= 270;
     } else if (angle<0) {
-        angle += 360;
+        angle += 270;
     }
     
     for (i=0; i<4; i++) {
