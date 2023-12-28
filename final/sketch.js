@@ -12,32 +12,32 @@ let deg; //代表一個角度值，可能用於存儲或操作特定的角度
 function setup() {
     // put setup code here
     createCanvas(400, 400);//背景畫布大小
-    noLoop();
-    angleMode(DEGREES);
+    noLoop(); //一次性 draw(),而不是持續執行
+    angleMode(DEGREES); //設定角度模式為度數模式
 }
 
 function draw() {
-    newTree();
+    newTree(); //畫一顆新的樹
 }
 
-function mouseClicked() { //按滑鼠
-    newTree();
+function mouseClicked() { 
+    newTree(); //在滑鼠點擊時畫一顆新的樹
 }
 
 function newTree() {
-    background(220);
+    background(220); //清空畫布
     
-    deg = random(80, 100);
+    deg = random(80, 100); // 設定樹的初始角度
     
-    baseLength = random(height / 8, height / 4);
-    minLength = random(1, 10);
-    lengthRatio = random(0.25, 0.75);
-    angleChange = random(6, 60);
-    thickness = random(10, 20);
-    thicknessRatio = random(0.4, 0.7);
+    baseLength = random(height / 9, height / 3); //設定樹的基本長度
+    minLength = random(1, 11); //設定樹的最小長度
+    lengthRatio = random(0.35, 0.85); //設定樹的長度比率
+    angleChange = random(6, 50); //設定樹的角度變化
+    thickness = random(10, 30); //設定樹的初始厚度
+    thicknessRatio = random(0.4, 0.7); //設定樹的厚度比率
     
-    leafDensity = random(0, 10);
-    leafColor = color(random(0, 255), random(0, 255), random(0, 255));
+    leafDensity = random(0, 20); //設定葉子的密度
+    leafColor = color(random(0, 255), random(0, 255), random(0, 255)); //設定葉子的顏色
 
     drawTree(
         width / 2,
