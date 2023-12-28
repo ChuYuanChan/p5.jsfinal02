@@ -22,15 +22,18 @@ function setup() {
 function draw() {
     newTree(); //畫一顆新的樹
     triangles()
-    square(420, 330,80)
+    square(420, 329,80)
 }
 
 
 function triangles() {
-    strokeColor = '	#000000';//黑色
-    stroke(strokeColor);
-    fill('	#000000')
+    fill('#000000');
     triangle(410, 330 , 510, 330 ,460, 270);// 函數需要六個數值，分別代表三個點的 x 和 y 座標。
+}
+
+function square() {
+    fill('#006400');
+    square(420, 329, 80)// 函數需要六個數值，分別代表三個點的 x 和 y 座標。
 }
 
 
