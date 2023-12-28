@@ -17,12 +17,25 @@ function setup() {
 
 }
 
+
+
 function draw() {
     newTree(); //畫一顆新的樹
+    triangles()
+    square(420, 330,80)
 }
 
+
+function triangles() {
+    strokeColor = '	#000000';//黑色
+    stroke(strokeColor);
+    fill('	#000000')
+    triangle(410, 330 , 510, 330 ,460, 270);// 函數需要六個數值，分別代表三個點的 x 和 y 座標。
+}
+
+
 function newTree() {
-    background('#FFC78E');
+    background('#F5F5F5');//白煙色
 
     deg = (80, 100);
     
@@ -34,7 +47,7 @@ function newTree() {
     thicknessRatio = (0.4, 0.7); // 設定樹的厚度比率
 
     leafDensity = (0, 10); // 設定葉子的密度
-    leafColor = color('#CC5500');//RGB色票
+    leafColor = color('	#E6C35C');//茉莉黃
 
     thickness = (10, 20);
     thicknessRatio = (0.4, 0.7);
