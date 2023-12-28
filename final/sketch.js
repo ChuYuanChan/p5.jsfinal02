@@ -20,37 +20,28 @@ function draw() {
     newTree(); //畫一顆新的樹
 }
 
-function mouseClicked() { 
-    newTree(); //在滑鼠點擊時畫一顆新的樹
-}
-
 function newTree() {
     background(220);
 
-    deg = random(80, 100);
+    deg = (80, 100);
     
-    baseLength = random(height / 8, height / 4); // 設定樹的基本長度
-    minLength = random(1, 10); // 設定樹的最小長度
-    lengthRatio = random(0.25, 0.75); // 設定樹的長度比率
-    angleChange = random(6, 60); // 設定樹的角度變化
-    thickness = random(10, 20); // 設定樹的初始厚度
-    thicknessRatio = random(0.4, 0.7); // 設定樹的厚度比率
+    baseLength = (height / 8, height / 4); // 設定樹的基本長度
+    minLength = (1, 10); // 設定樹的最小長度
+    lengthRatio = (0.25, 0.75); // 設定樹的長度比率
+    angleChange = (6, 60); // 設定樹的角度變化
+    thickness = (10, 20); // 設定樹的初始厚度
+    thicknessRatio = (0.4, 0.7); // 設定樹的厚度比率
 
-    leafDensity = random(0, 10); // 設定葉子的密度
-    leafColor = color(random(0, 255), random(0, 255), random(0, 255))
+    leafDensity = (0, 10); // 設定葉子的密度
+    leafColor = color(0, 255), (0, 255), (0, 255)
 
-    // 新增條件來限制角度變化的最大值
-    if (angleChange > 90) {
-        angleChange = 90; // 這裡可以改成你希望的最大值
-    }
+    thickness = (10, 20);
+    thicknessRatio = (0.4, 0.7);
 
-    thickness = random(10, 20);
-    thicknessRatio = random(0.4, 0.7);
+    leafDensity = (0, 10);
+    leafColor = color(0, 255), (0, 255),(0, 255);
 
-    leafDensity = random(0, 10);
-    leafColor = color(random(0, 255), random(0, 255), random(0, 255));
-
-    drawTree(width / 2, height, deg, baseLength, thickness);
+    drawTree(width / 4, height, deg, baseLength, thickness);
 }
 
 
