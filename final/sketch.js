@@ -14,6 +14,7 @@ function setup() {
     createCanvas(600, 400);//背景畫布大小
     noLoop(); //一次性 draw(),而不是持續執行
     angleMode(DEGREES); //設定角度模式為度數模式
+
 }
 
 function draw() {
@@ -21,7 +22,7 @@ function draw() {
 }
 
 function newTree() {
-    background(220);
+    background('#FFC78E');
 
     deg = (80, 100);
     
@@ -33,13 +34,10 @@ function newTree() {
     thicknessRatio = (0.4, 0.7); // 設定樹的厚度比率
 
     leafDensity = (0, 10); // 設定葉子的密度
-    leafColor = color(0, 255), (0, 255), (0, 255)
+    leafColor = color('#CC5500');//RGB色票
 
     thickness = (10, 20);
     thicknessRatio = (0.4, 0.7);
-
-    leafDensity = (0, 10);
-    leafColor = color(0, 255), (0, 255),(0, 255);
 
     drawTree(width / 4, height, deg, baseLength, thickness);
 }
@@ -66,8 +64,8 @@ function drawTree(x, y, angle, length, thickness) {
     }
     
     if (length >= minLength) {
-        drawTree(x2, y2, angle + angleChange, length * lengthRatio+v[0], thickness*thicknessRatio);
-        drawTree(x2, y2, angle - angleChange, length * lengthRatio+v[1], thickness*thicknessRatio);
+        drawTree(x2, y2, angle + angleChange, length * lengthRatio+v[2], thickness*thicknessRatio);
+        drawTree(x2, y2, angle - angleChange, length * lengthRatio+v[3], thickness*thicknessRatio);
         //drawTree(x2, y2, angle + angleChange*2, length * lengthRatio+v[2], thickness*thicknessRatio);
         //drawTree(x2, y2, angle - angleChange*2, length * lengthRatio+v[3], thickness*thicknessRatio);
     } else {
@@ -76,7 +74,7 @@ function drawTree(x, y, angle, length, thickness) {
 
 }
 
-function drawLeaves(x, y) {
+function drawLeaves(x1, y1) {
     push();
   
     fill(leafColor);
@@ -84,8 +82,8 @@ function drawLeaves(x, y) {
   
     for (let i = 0; i < leafDensity; i++) {
         circle(
-            randomGaussian(x, 10),
-            randomGaussian(y, 10),
+            randomGaussian(x1, 10),
+            randomGaussian(y1, 10),
             random(2, 5)
         );
     }
