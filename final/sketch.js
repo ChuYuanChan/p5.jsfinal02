@@ -21,19 +21,20 @@ function setup() {
 
 function draw() {
     newTree(); //畫一顆新的樹
-    triangles()
-    square(420, 329,80)
+    triangles();
+    square1(420, 329,80);
 }
 
+function square1() {
+    const c = color(71, 52, 46);
+    fill(c);
+    noStroke();
+    rect(420, 331,80);
+}
 
 function triangles() {
-    fill('#000000');
+    fill('#642100');
     triangle(410, 330 , 510, 330 ,460, 270);// 函數需要六個數值，分別代表三個點的 x 和 y 座標。
-}
-
-function square() {
-    fill('#006400');
-    square(420, 329, 80)// 函數需要六個數值，分別代表三個點的 x 和 y 座標。
 }
 
 
