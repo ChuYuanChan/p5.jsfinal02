@@ -26,14 +26,14 @@ function draw() {
 }
 
 function square1() {
-    const c = color(71, 52, 46);
+    const c = color(0, 0, 0);//71,52,46
     fill(c);
     noStroke();
     rect(420, 331,80);
 }
 
 function triangles() {
-    fill('#642100');
+    fill('#000000');//#642100
     triangle(410, 330 , 510, 330 ,460, 270);// 函數需要六個數值，分別代表三個點的 x 和 y 座標。
 }
 
